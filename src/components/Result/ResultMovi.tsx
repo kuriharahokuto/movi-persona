@@ -46,7 +46,7 @@ export function ResultMovi() {
         decoding="async"
       />
       <div
-        className="result-movi-intro-bubble relative w-full max-w-[620px] rounded-md px-5 py-4 text-sm font-bold leading-7 text-neutral-100 sm:px-6 sm:py-5 sm:text-base"
+        className="result-movi-intro-bubble relative flex h-32 w-full max-w-[620px] flex-col justify-center rounded-md px-5 py-4 text-sm font-bold leading-7 text-neutral-100 sm:h-28 sm:px-6 sm:py-5 sm:text-base"
         style={{
           backgroundColor: "#080808",
           border: "1px solid rgba(212,175,55,0.55)",
@@ -54,7 +54,9 @@ export function ResultMovi() {
         }}
       >
         <p className="text-xs font-black tracking-[0.22em] text-cinema-gold">Movi's REPORT</p>
-        <p className="mt-2 min-h-[1.75rem] text-base font-black leading-7 text-neutral-50 sm:text-lg">{message}</p>
+        <p className="mt-2 flex min-h-14 items-center text-base font-black leading-7 text-neutral-50 sm:min-h-12 sm:text-lg">
+          {message}
+        </p>
       </div>
     </section>
   );

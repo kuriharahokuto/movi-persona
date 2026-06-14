@@ -621,29 +621,14 @@ export const createCinematicScores = (result: DiagnosisResult): CinematicScore[]
 };
 
 const createXShareText = (
-  result: DiagnosisResult,
   archetype: Archetype,
-  heroComparison: HeroComparison,
   movieProfile: MovieResultProfile,
 ): string => {
   return [
-    "私が主演の映画は",
-    "",
-    `🎬 ${movieProfile.movieTitle}`,
-    "",
-    "でした。",
-    "",
-    movieProfile.movieCatchCopy,
-    "",
-    "主人公タイプ：",
-    `${archetype.japaneseName}（${result.archetype}）`,
-    "",
-    heroComparison.title,
-    heroComparison.primaryAxis,
-    "",
-    "みんなはどんな映画の主人公だった？",
-    "MOVI Persona",
-    "Your Life, Your Movie",
+    `🎬 私が主演の映画は「${movieProfile.movieTitle}」`,
+    `主人公タイプ：${archetype.japaneseName}`,
+    "あなたはどんな映画の主人公？",
+    "https://movi-persona.vercel.app/",
     "#MOVIPersona",
   ].join("\n");
 };
@@ -691,6 +676,6 @@ export const createResultViewModel = (result: DiagnosisResult): ResultViewModel 
     screenwriterReport: createScreenwriterReport(archetype, report),
     behavioralIntelligenceReport: createBehavioralIntelligenceReport(archetype, report),
     shareText: report.shareText,
-    xShareText: createXShareText(result, archetype, heroComparison, movieProfile),
+    xShareText: createXShareText(archetype, movieProfile),
   };
 };
